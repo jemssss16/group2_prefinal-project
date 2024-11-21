@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Recipe Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shadcn/ui@latest/styles.css">
+</head>
+<body class="bg-cover bg-center bg-no-repeat bg-gray-100" style="background-image: url('Images/Background.jpg');">
+    <div class="bg-white bg-opacity-80 p-6 rounded-lg shadow-lg max-w-4xl mx-auto">
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-bold">Random Recipe Generator</h1>
+    </header>
+    
+    <style>
+        /* Custom hover effects for buttons */
+        button:hover {
+          transform: scale(1.05);
+          transition: transform 0.2s ease-in-out;
+        }
+      
+        /* Recipe details card animation */
+        #recipeDetails {
+          animation: fadeIn 0.5s ease-in-out;
+        }
+      
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      
+        /* Custom styles for loading spinner */
+        .spinner {
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #3498db;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          animation: spin 1s linear infinite;
+          margin: 0 auto;
+        }
+      
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+      
+
+    <div class="flex justify-center space-x-4 mb-6">
+        <button id="breakfastBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 shadow-md">Breakfast</button>
+        <button id="lunchBtn" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 shadow-md">Lunch</button>
+        <button id="dinnerBtn" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 shadow-md">Dinner</button>
+        <button id="sideDishBtn" class="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 shadow-md">Side Dish</button>
+        <button id="dessertBtn" class="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 shadow-md">Dessert</button>
+        <button id="snackBtn" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-orange-600 shadow-md">Snack</button>   
+    </div>
+
+    
+
+    <button id="surpriseBtn" class="px-6 py-3 bg-red-500 text-white rounded-md block mx-auto mb-6">Surprise Me!</button>
+
+    <div id="recipeDetails" class="p-6 bg-white rounded-lg shadow-lg text-gray-800 border border-gray-200">
+      <h1>Recipe details will show here...</h1>
+      </div>      
+  </div>
+
+  <div id="loadingSpinner" class="hidden">
+    <div class="spinner"></div>
+  </div>  
+
+  <script src="app.js"></script>
+</body>
+</html>
